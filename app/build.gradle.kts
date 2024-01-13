@@ -42,6 +42,10 @@ android {
         jvmTarget = "1.8"
     }
 
+    buildFeatures{
+        dataBinding = true
+    }
+
     kapt {
         correctErrorTypes = true
     }

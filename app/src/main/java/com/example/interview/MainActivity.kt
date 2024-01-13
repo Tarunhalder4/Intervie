@@ -1,14 +1,17 @@
 package com.example.interview
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil
+import com.example.interview.databinding.ActivityMainBinding
 import javax.inject.Inject
-import javax.inject.Named
 
 //@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     @Inject lateinit var repository:Repository
+    private lateinit var binding: ActivityMainBinding
 
     @VivoAnotation @Inject lateinit var vivo: Mobile
 //    @RedmiAnotation @Inject lateinit var redmi:Mobile
@@ -20,9 +23,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        DaggerComponent.create().inject(this)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+
+
+        (application as Base).component.inject(this)
 
         val mobiles = arrayOf(vivo,vivo1)
 
@@ -30,7 +35,13 @@ class MainActivity : AppCompatActivity() {
             Util.showMassage(it.toString())
         }
 
+        goToOtherActivity(binding)
 
+    }
 
+    private fun goToOtherActivity(binding: ActivityMainBinding){
+        binding.button.setOnClickListener {
+            startActivity(Intent(this@MainActivity,OtherActivity::class.java))
+        }
     }
 }

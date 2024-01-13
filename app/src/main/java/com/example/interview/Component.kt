@@ -11,6 +11,7 @@ interface Component {
     //fun getRepository():Repository
 
     fun inject(mainActivity: MainActivity)
+    fun inject(otherActivity: OtherActivity)
 
 
 }
