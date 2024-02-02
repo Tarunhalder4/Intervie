@@ -21,6 +21,7 @@ class OtherActivity : AppCompatActivity() {
 
         val arrayOfMobile = arrayOf(vivo,vivo1)
 
+
         arrayOfMobile.forEach {
             Util.showMassage(it.toString())
         }
