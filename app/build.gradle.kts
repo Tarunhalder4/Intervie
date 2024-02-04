@@ -4,7 +4,8 @@ plugins {
 
 
     /////////----------------   for dagger ----------///////
-    id("kotlin-kapt")  //// dagger2
+    id("kotlin-kapt")
+    id("com.google.gms.google-services")  //// dagger2
 
     //kotlin("kapt")     ////for dagger hilt
     //  id("com.google.dagger.hilt.android")   ////for dagger hilt
@@ -53,6 +54,7 @@ android {
 
 dependencies {
 
+    implementation("com.google.firebase:firebase-messaging:23.4.0")
     val daggerVersion = "2.50"
 
     implementation("androidx.core:core-ktx:1.12.0")
