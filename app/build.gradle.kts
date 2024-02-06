@@ -57,7 +57,7 @@ dependencies {
     val firebaseVersion = "23.4.0"
     val retrofitVersion = "2.9.0"
     val coroutinesVersion = "1.7.1"
-    val viewModelLifeCycleVersion = "2.7.0"
+    val lifeCycleVersion = "2.2.0-rc03"
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -84,14 +84,8 @@ dependencies {
 
     ////////// coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
-    //implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$viewModelLifeCycleVersion")
-   // implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
 
-
-
-
-    val lifecycle_version = "2.2.0-rc03"
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
-    kapt ("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    kapt ("androidx.lifecycle:lifecycle-compiler:2.7.0")
 }
